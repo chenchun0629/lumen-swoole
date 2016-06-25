@@ -65,15 +65,15 @@ class Server
     protected function _onRequest()
     {
         return function (SwooleHttpRequest $request, SwooleHttpResponse $response) {
-            $get    = isset($request->get) ? $request->get : [];
-            $post   = isset($request->post) ? $request->post : [];
-            $cookie = isset($request->cookie) ? $request->cookie : [];
-            $server = isset($request->server) ? $request->server : [];
-            $header = isset($request->header) ? $request->header : [];
-            $files  = isset($request->files) ? $request->files : [];
+            $get     = isset($request->get) ? $request->get : [];
+            $post    = isset($request->post) ? $request->post : [];
+            $cookie  = isset($request->cookie) ? $request->cookie : [];
+            $server  = isset($request->server) ? $request->server : [];
+            $header  = isset($request->header) ? $request->header : [];
+            $files   = isset($request->files) ? $request->files : [];
             $content = $request->rawContent() ?: null;
 
-            $lumenRequest = new LumenRequest($get, $post, [], $cookie, $files, $server, $content);
+            $lumenRequest = LumenRequest::create($server['request_uri'], $server['request_method'], array_merge($get, $post), $cookie, $files, $server, $content);
             $response->end($this->app->dispatch($lumenRequest)->content());
         };
     }
