@@ -7,7 +7,9 @@
             "email": "pangou@live.cn"
         }
     ],
-    "require": {},
+    "require": {
+        "laravel/lumen": "5.2.*"
+    },
     "autoload": {
         "psr-4": { "LumenSwooleHttp\\": "src" }
     }
