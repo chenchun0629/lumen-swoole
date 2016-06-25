@@ -1,0 +1,11 @@
+{
+    "name": "pangou/lumen-swoole-http",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenchun0629",
+            "email": "pangou@live.cn"
+        }
+    ],
+    "require": {}
+}
