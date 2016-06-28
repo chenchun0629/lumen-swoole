@@ -65,6 +65,10 @@ class Server
     protected function _onRequest()
     {
         return function (SwooleHttpRequest $request, SwooleHttpResponse $response) {
+
+            $clone = clone $this->app;
+            $clone::setInstance($clone);
+
             $get     = isset($request->get) ? $request->get : [];
             $post    = isset($request->post) ? $request->post : [];
             $cookie  = isset($request->cookie) ? $request->cookie : [];
@@ -75,6 +79,9 @@ class Server
 
             $lumenRequest = LumenRequest::create($server['request_uri'], $server['request_method'], array_merge($get, $post), $cookie, $files, $server, $content);
             $response->end($this->app->dispatch($lumenRequest)->content());
+            
+            $clone->flush();
+            unset($clone);
         };
     }
 
