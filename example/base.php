@@ -16,6 +16,11 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$server = new LumenSwooleHttp\Server($app);
-$server->run();
+$app->loadComponent('swooleserver', [
+        LumenSwooleHttp\LumenSwooleServiceProvide::class
+    ], 'lumen.swoole')->createServer()->run();
+
+
+// $server = new LumenSwooleHttp\HttpServer($app);
+// $server->run();
 

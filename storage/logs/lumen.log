@@ -1,79 +1,148 @@
-[2016-06-25 12:34:29] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Uncaught ErrorException: Undefined index: REQUEST_METHOD in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:668
+[2016-06-29 13:18:09] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Uncaught ErrorException: Undefined property: LumenSwooleHttp\HttpServer::$app in /data/test/lumen-swoole-http/src/HttpServer.php:89
 Stack trace:
-#0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(668): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined index...', '/data/test/lume...', 668, Array)
-#1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(411): Laravel\Lumen\Application->getMethod()
-#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(378): Laravel\Lumen\Application->parseIncomingRequest(NULL)
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(NULL)
-#4 /data/test/lumen-swoole-http/src/Server.php(22): Laravel\Lumen\Application->run()
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(sw in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:668
-Stack trace:
-#0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(55): Laravel\Lumen\Application->handleShutdown()
-#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
-#2 {main}  
-[2016-06-25 12:41:58] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Uncaught ErrorException: Undefined index: REQUEST_METHOD in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:668
-Stack trace:
-#0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(668): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined index...', '/data/test/lume...', 668, Array)
-#1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(411): Laravel\Lumen\Application->getMethod()
-#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(378): Laravel\Lumen\Application->parseIncomingRequest(NULL)
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(NULL)
-#4 /data/test/lumen-swoole-http/src/Server.php(44): Laravel\Lumen\Application->run()
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(sw in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:668
+#0 /data/test/lumen-swoole-http/src/HttpServer.php(89): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined prope...', '/data/test/lume...', 89, Array)
+#1 /data/test/lumen-swoole-http/src/HttpServer.php(65): LumenSwooleHttp\HttpServer->_initApplication()
+#2 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(23): swoole_http_server->start()
+#4 /data/test/lumen-swoole-http/example/base.php(20): LumenSwooleHttp\HttpServer->run()
+#5 {main}
+  thrown in /data/test/lumen-swoole-http/src/HttpServer.php:89
 Stack trace:
 #0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(55): Laravel\Lumen\Application->handleShutdown()
 #1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
 #2 {main}  
-[2016-06-25 12:42:15] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
+[2016-06-29 13:19:32] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
 Stack trace:
 #0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(387): Laravel\Lumen\Application->handleDispatcherResponse(Array)
 #1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(636): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
 #2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
-#4 /data/test/lumen-swoole-http/src/Server.php(44): Laravel\Lumen\Application->run(Object(Illuminate\Http\Request))
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
-#6 /data/test/lumen-swoole-http/src/Server.php(46): swoole_http_server->start()
-#7 /data/test/lumen-swoole-http/example/base.php(19): LumenSwooleHttp\Server->run()
-#8 {main}  
-[2016-06-25 12:42:16] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(75): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#4 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#5 /data/test/lumen-swoole-http/src/HttpServer.php(30): swoole_http_server->start()
+#6 /data/test/lumen-swoole-http/example/base.php(20): LumenSwooleHttp\HttpServer->run()
+#7 {main}  
+[2016-06-29 13:19:35] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
 Stack trace:
 #0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(387): Laravel\Lumen\Application->handleDispatcherResponse(Array)
 #1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(636): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
 #2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
-#4 /data/test/lumen-swoole-http/src/Server.php(44): Laravel\Lumen\Application->run(Object(Illuminate\Http\Request))
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
-#6 /data/test/lumen-swoole-http/src/Server.php(46): swoole_http_server->start()
-#7 /data/test/lumen-swoole-http/example/base.php(19): LumenSwooleHttp\Server->run()
-#8 {main}  
-[2016-06-25 12:48:39] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(75): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#4 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#5 /data/test/lumen-swoole-http/src/HttpServer.php(30): swoole_http_server->start()
+#6 /data/test/lumen-swoole-http/example/base.php(20): LumenSwooleHttp\HttpServer->run()
+#7 {main}  
+[2016-06-29 13:19:37] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
 Stack trace:
 #0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(387): Laravel\Lumen\Application->handleDispatcherResponse(Array)
 #1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(636): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
 #2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
-#4 /data/test/lumen-swoole-http/src/Server.php(33): Laravel\Lumen\Application->run(Object(Illuminate\Http\Request))
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
-#6 /data/test/lumen-swoole-http/src/Server.php(35): swoole_http_server->start()
-#7 /data/test/lumen-swoole-http/example/base.php(19): LumenSwooleHttp\Server->run()
-#8 {main}  
-[2016-06-25 12:48:40] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(75): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#4 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#5 /data/test/lumen-swoole-http/src/HttpServer.php(30): swoole_http_server->start()
+#6 /data/test/lumen-swoole-http/example/base.php(20): LumenSwooleHttp\HttpServer->run()
+#7 {main}  
+[2016-06-29 14:07:32] lumen.ERROR: ReflectionException: Class swoolehttp does not exist in /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php:734
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(734): ReflectionClass->__construct('swoolehttp')
+#1 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build('swoolehttp', Array)
+#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('swoolehttp', Array)
+#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(560): Laravel\Lumen\Application->make('swoolehttp')
+#4 /data/test/lumen-swoole-http/example/base.php(21): Laravel\Lumen\Application->loadComponent('swoolehttp', Array)
+#5 {main}  
+[2016-06-29 14:11:16] lumen.ERROR: ReflectionException: Class swoolehttp does not exist in /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php:734
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(734): ReflectionClass->__construct('swoolehttp')
+#1 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build('swoolehttp', Array)
+#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('swoolehttp', Array)
+#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(560): Laravel\Lumen\Application->make('swoolehttp')
+#4 /data/test/lumen-swoole-http/example/base.php(21): Laravel\Lumen\Application->loadComponent('swoolehttp', Array)
+#5 {main}  
+[2016-06-29 14:11:19] lumen.ERROR: ReflectionException: Class swoolehttp does not exist in /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php:734
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(734): ReflectionClass->__construct('swoolehttp')
+#1 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build('swoolehttp', Array)
+#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('swoolehttp', Array)
+#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(560): Laravel\Lumen\Application->make('swoolehttp')
+#4 /data/test/lumen-swoole-http/example/base.php(21): Laravel\Lumen\Application->loadComponent('swoolehttp', Array)
+#5 {main}  
+[2016-06-29 14:11:37] lumen.ERROR: ReflectionException: Class lumen.swoole does not exist in /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php:734
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(734): ReflectionClass->__construct('lumen.swoole')
+#1 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build('lumen.swoole', Array)
+#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('lumen.swoole', Array)
+#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/helpers.php(39): Laravel\Lumen\Application->make('lumen.swoole', Array)
+#4 /data/test/lumen-swoole-http/example/base.php(23): app('lumen.swoole')
+#5 {main}  
+[2016-06-29 14:18:10] lumen.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Parse error: syntax error, unexpected '}' in /data/test/lumen-swoole-http/src/LumenSwooleFactory.php:12
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/composer/ClassLoader.php(301): Composer\Autoload\includeFile('/data/test/lume...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('LumenSwooleHttp...')
+#2 [internal function]: spl_autoload_call('LumenSwooleHttp...')
+#3 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(734): ReflectionClass->__construct('LumenSwooleHttp...')
+#4 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build('LumenSwooleHttp...', Array)
+#5 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('LumenSwooleHttp...', Array)
+#6 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(230): Laravel\Lumen\Application->make('LumenSwooleHttp...', Array)
+#7 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(731): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Laravel\Lumen\Application), Array)
+#8 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build(Object(Closure), Array)
+#9 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('lumen.swoolefac...', Array)
+#10 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/helpers.php(39): Laravel\Lumen\Application->make('lumen.swoolefac...', Array)
+#11 /data/test/lumen-swoole-http/src/LumenSwooleServerManager.php(16): app('lumen.swoolefac...')
+#12 /data/test/lumen-swoole-http/src/LumenSwooleServiceProvide.php(16): LumenSwooleHttp\LumenSwooleServerManager->__construct(Object(Laravel\Lumen\Application))
+#13 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(731): LumenSwooleHttp\LumenSwooleServiceProvide->LumenSwooleHttp\{closure}(Object(Laravel\Lumen\Application), Array)
+#14 /data/test/lumen-swoole-http/vendor/illuminate/container/Container.php(629): Illuminate\Container\Container->build(Object(Closure), Array)
+#15 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(205): Illuminate\Container\Container->make('lumen.swoole', Array)
+#16 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Application.php(560): Laravel\Lumen\Application->make('lumen.swoole')
+#17 /data/test/lumen-swoole-http/example/base.php(21): Laravel\Lumen\Application->loadComponent('swooleserver', Array, 'lumen.swoole')
+#18 {main}  
+[2016-06-29 14:18:15] lumen.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Type error: Argument 1 passed to LumenSwooleHttp\LumenSwooleFactory::make() must be of the type array, null given, called in /data/test/lumen-swoole-http/src/LumenSwooleServerManager.php on line 22 in /data/test/lumen-swoole-http/src/LumenSwooleFactory.php:9
+Stack trace:
+#0 /data/test/lumen-swoole-http/src/LumenSwooleServerManager.php(22): LumenSwooleHttp\LumenSwooleFactory->make(NULL)
+#1 /data/test/lumen-swoole-http/example/base.php(21): LumenSwooleHttp\LumenSwooleServerManager->createServer()
+#2 {main}  
+[2016-06-29 14:40:44] lumen.ERROR: ErrorException: Undefined index: port in /data/test/lumen-swoole-http/src/LumenSwooleFactory.php:15
+Stack trace:
+#0 /data/test/lumen-swoole-http/src/LumenSwooleFactory.php(15): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined index...', '/data/test/lume...', 15, Array)
+#1 /data/test/lumen-swoole-http/src/LumenSwooleServerManager.php(24): LumenSwooleHttp\LumenSwooleFactory->make(Object(Laravel\Lumen\Application), Array)
+#2 /data/test/lumen-swoole-http/example/base.php(21): LumenSwooleHttp\LumenSwooleServerManager->createServer()
+#3 {main}  
+[2016-06-29 14:40:54] lumen.ERROR: ErrorException: Undefined index: setting in /data/test/lumen-swoole-http/src/LumenSwooleFactory.php:15
+Stack trace:
+#0 /data/test/lumen-swoole-http/src/LumenSwooleFactory.php(15): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined index...', '/data/test/lume...', 15, Array)
+#1 /data/test/lumen-swoole-http/src/LumenSwooleServerManager.php(24): LumenSwooleHttp\LumenSwooleFactory->make(Object(Laravel\Lumen\Application), Array)
+#2 /data/test/lumen-swoole-http/example/base.php(21): LumenSwooleHttp\LumenSwooleServerManager->createServer()
+#3 {main}  
+[2016-06-29 14:41:36] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: swoole_server::__construct(): listen server port failed. in /data/test/lumen-swoole-http/src/HttpServer.php:31
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(55): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
+[2016-06-29 14:42:27] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
 Stack trace:
 #0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(387): Laravel\Lumen\Application->handleDispatcherResponse(Array)
 #1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(636): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
 #2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
-#4 /data/test/lumen-swoole-http/src/Server.php(33): Laravel\Lumen\Application->run(Object(Illuminate\Http\Request))
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
-#6 /data/test/lumen-swoole-http/src/Server.php(35): swoole_http_server->start()
-#7 /data/test/lumen-swoole-http/example/base.php(19): LumenSwooleHttp\Server->run()
-#8 {main}  
-[2016-06-25 12:49:11] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(82): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#4 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#5 /data/test/lumen-swoole-http/src/HttpServer.php(37): swoole_http_server->start()
+#6 /data/test/lumen-swoole-http/example/base.php(21): LumenSwooleHttp\HttpServer->run()
+#7 {main}  
+[2016-06-29 14:42:28] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
 Stack trace:
 #0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(387): Laravel\Lumen\Application->handleDispatcherResponse(Array)
 #1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(636): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
 #2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
-#3 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(334): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
-#4 /data/test/lumen-swoole-http/src/Server.php(34): Laravel\Lumen\Application->run(Object(Illuminate\Http\Request))
-#5 [internal function]: LumenSwooleHttp\Server->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
-#6 /data/test/lumen-swoole-http/src/Server.php(36): swoole_http_server->start()
-#7 /data/test/lumen-swoole-http/example/base.php(19): LumenSwooleHttp\Server->run()
-#8 {main}  
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(82): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#4 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#5 /data/test/lumen-swoole-http/src/HttpServer.php(37): swoole_http_server->start()
+#6 /data/test/lumen-swoole-http/example/base.php(21): LumenSwooleHttp\HttpServer->run()
+#7 {main}  
+[2016-06-29 14:42:38] lumen.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException in /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php:450
+Stack trace:
+#0 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(387): Laravel\Lumen\Application->handleDispatcherResponse(Array)
+#1 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(636): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 /data/test/lumen-swoole-http/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(389): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#3 /data/test/lumen-swoole-http/src/HttpServer.php(82): Laravel\Lumen\Application->dispatch(Object(Illuminate\Http\Request))
+#4 [internal function]: LumenSwooleHttp\HttpServer->LumenSwooleHttp\{closure}(Object(swoole_http_request), Object(swoole_http_response))
+#5 /data/test/lumen-swoole-http/src/HttpServer.php(37): swoole_http_server->start()
+#6 /data/test/lumen-swoole-http/example/base.php(21): LumenSwooleHttp\HttpServer->run()
+#7 {main}  
