@@ -10,10 +10,10 @@ class LumenSwooleServiceProvide extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton('lumen.swoolefactory', LumenSwooleFactory::class);
+        $this->app->singleton('lumen.swoole.factory', LumenSwooleFactory::class);
 
         $this->app->singleton('lumen.swoole', function ($app) {
-            return new LumenSwooleServerManager($app, app('lumen.swoolefactory'));
+            return new LumenSwooleServerManager($app, app('lumen.swoole.factory'));
         });
     }
 }

@@ -13,6 +13,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new Laravel\Lumen\Application();
 
 $app->get('/', function () use ($app) {
+    // usleep(200000);
     return $app->version();
 });
 
@@ -20,7 +21,4 @@ $app->loadComponent('swooleserver', [
         LumenSwooleHttp\LumenSwooleServiceProvide::class
     ], 'lumen.swoole')->createServer()->run();
 
-
-// $server = new LumenSwooleHttp\HttpServer($app);
-// $server->run();
 
