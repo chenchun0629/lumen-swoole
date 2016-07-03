@@ -1,15 +1,16 @@
 <?php 
 
-namespace LumenSwooleHttp;
+namespace LumenSwoole;
 
 
 use swoole_http_server as SwooleHttpServer;
 use swoole_http_request as SwooleHttpRequest;
 use swoole_http_response as SwooleHttpResponse;
 
-use LumenSwooleHttp\Contracts\ServerContract;
+use LumenSwoole\Contracts\ServerContract;
 use Illuminate\Http\Request as LumenRequest;
 use Laravel\Lumen\Application as LumenApplication;
+use Illuminate\Database\Eloquent\Model;
 
 class HttpServer implements ServerContract
 {
@@ -100,6 +101,10 @@ class HttpServer implements ServerContract
 
     protected function _initApplication()
     {
+        if ($this->app['db']) {
+            Model::clearBootedModels();
+        }
+
         $clone = clone $this->app;
         $clone::setInstance($clone);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace LumenSwooleHttp\Contracts;
+namespace LumenSwoole\Contracts;
 
 interface ServerContract
 {

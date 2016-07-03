@@ -1,5 +1,5 @@
 {
-    "name": "pangou/lumen-swoole-http",
+    "name": "pangou/lumen-swoole",
     "license": "MIT",
     "authors": [
         {
@@ -8,9 +8,10 @@
         }
     ],
     "require": {
-        "laravel/lumen-framework": "5.2.*"
+        "laravel/lumen-framework": "5.2.*",
+        "vlucas/phpdotenv": "~2.2"
     },
     "autoload": {
-        "psr-4": { "LumenSwooleHttp\\": "src" }
+        "psr-4": { "LumenSwoole\\": "src" }
     }
 }
